@@ -15,3 +15,8 @@ A few projects are referenced in this talk:
   * `traad <https://github.com/abingham/traad>`_
   
 You don't need to have these locally for the talk, but it might be worthwhile afterward.
+
+outline-presentation-mode
+=========================
+
+In case you're curious about such things, this presentation is done in `outline-presentation-mode <http://shebang.ws/emacs-outline-presentation-mode.html>`_.
