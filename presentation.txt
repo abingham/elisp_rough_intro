@@ -210,3 +210,20 @@ it.
  - traad-find-occurrences (lexical-let)
 
 https://github.com/abingham/traad
+
+* A small project: bookmarks
+
+Let's implement a small project. 
+
+This will get elisp "into your fingers" a bit.
+
+** Bookmarks
+
+We'll implement a tool for making bookmarks and navigating among them.
+
+Not novel: there are several excellent bookmark tools out there
+already.
+
+But this is simple to implement and realistic enough to be useful.
+
+** TODO: The rest of the project...
