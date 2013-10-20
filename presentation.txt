@@ -1,0 +1,212 @@
+*______________________________________________________________________________*
+
+                  A rough introduction to Emacs Lisp
+
+                            Austin Bingham
+                            Sixty North AS
+
+                       twitter: @austin_bingham
+                    email: austin@sixty-north.com
+
+________________________________________________________________________________
+
+* A brief history of emacs
+
+** All of the good things were invented in the 70's
+
+Guy Steele and Richard Stallman, MIT, 1976 
+
+TECO editor => Editor MACroS
+               E      MAC  S
+
+** The situation these days
+
+Two major variants exist::
+
+  * GNU emacs (my preference)
+  * XEmacs
+
+Windows installers, Mac OSX packages, all linux platforms, android,
+etc.
+
+* What is emacs?
+
+** The text editor...OF THE GODS!
+
+Just kidding. Gods are obviously upper management and use PowerPoint.
+
+But emacs is awesomely powerful for pure text editing in the hands of
+an experienced user.
+
+At the same time, it's at least slightly more approachable than vi for beginners.
+
+** An operating system
+
+Emacs is very portable, and it provides a *lot* of features you might
+expect from an OS::
+  
+  * mail
+  * news
+  * web
+  * file access
+  * psychoanalysis
+
+"The Emacs operating system needs a better editor."  -- someone on the internet
+
+** A lisp interpreter with a great DSL
+
+This is how I've come to view emacs.
+
+It is a lisp development environment with::
+
+  * A DSL for editing text
+  * Nice facilities for running, debugging, etc.
+  * A huge array of packages
+
+Emacs is not an extensible text-editor. It's a programming environment
+with a nice built-in library for editing text.
+
+** A massive OCD trap
+
+Properly applied, a combination of emacs, git, and dwarf fortress can
+actually put certain people's brains into a sort of fractal shutdown spiral.
+
+* What is emacs lisp?
+
+The variant of lisp that emacs uses.
+
+a.k.a. elisp
+
+All extension, customization, etc. of emacs is done by writing elisp.
+
+** Largely immediately understandable by all lispers
+
+Code like this::
+
+  (defun prosjekt-alist-transpose (a)
+    (mapcar (lambda (x) (cons (cdr x) (car x))) a))
+
+and this::
+
+  (defun codesearch-build-index (dir)
+    "Scan DIR to rebuild an index."
+    (interactive
+     (list
+      (read-directory-name "Directory: ")))
+    (let ((process-environment (copy-alist process-environment)))
+      (setenv "CSEARCHINDEX" codesearch-csearchindex)
+      (shell-command
+       (message "%s %s" codesearch-cindex dir)
+       (format "%s %s &" codesearch-cindex dir)
+       "*codesearch*")))
+
+should be parsable and largely understandable to anyone who knows any
+lisp. The *details* may be mysterious, but the language is very
+simple.
+
+** It's dynamically scoped
+
+Historically elisp has been dynamically scoped. 
+
+This a colossal brain-twister at first, esp. if you come from
+languages which first-order function, lexical scoping, closures, and
+all of that stuff.
+
+But the situation is improving:
+
+  http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html
+
+** It has no modularity
+
+By and large, every symbol exists in one gigantic namespace.
+
+Modularity is implemented by using name prefixes.
+
+** It supports a few basic data types
+
+The usual suspects:
+
+ - list
+ - hash
+ - string
+ - symbol
+ - numbers
+
+And some unusual:
+
+ - buffer
+ - process
+ - frame
+ - terminal
+
+** elisp is a horrible language!
+
+In a lot of ways it's a real mess.
+
+Until you learn "the way" it's pretty painful. And even after that
+it's not great.
+
+** elisp is a glorious language!
+
+The experience of writing code in your editor which is immediately
+reflected in your editor is exhilarating. 
+
+You become a ghost in the machine, and you become part of the
+Hofstadter-esque strange loop.
+
+The weaknesses of the language become its strengths when you're
+extendin emacs. But you wouldn't want to write missile guidance code
+in elisp.
+
+This transcendent experience is the bait in the OCD trap.
+
+* Things I wish I had known at the start
+** buffers
+** modes
+** edebug
+** apropos
+** describe-function
+** describe-variable
+** eval-buffer
+** eval-last-sexp
+
+* A guided tour of real elisp
+
+Let's take a look at some real elisp code.
+
+I wrote all of this and use it every day. 
+
+** codesearch.el
+
+This is an emacs interface to the codesearch tool (which is in itself awesome.)
+
+It's small and digestable. Let's step through the entire thing.
+
+You can get it here::
+
+  https://github.com/abingham/codesearch.el
+
+** prosjekt
+
+Prosjekt is a project manager for emacs. 
+
+Let's just look a few parts::
+
+ - prosjekt-open (look at hooks)
+ - prosjekt-setup (buffer management)
+ - anything-prosjekt (package interaction)
+
+https://github.com/abingham/prosjekt
+
+** traad
+
+Client-server interface to rope, with an elisp client.
+
+This is a pretty substantial project, but it has some cool stuff in
+it.
+
+ - traad-update-history-buffer (deferreds, parallel execution)
+ - traad-normalize-arguments (buffer, point)
+ - traad-find-occurrences (lexical-let)
+
+https://github.com/abingham/traad
