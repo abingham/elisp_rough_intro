@@ -155,7 +155,7 @@ You become a ghost in the machine, and you become part of the
 Hofstadter-esque strange loop.
 
 The weaknesses of the language become its strengths when you're
-extendin emacs. But you wouldn't want to write missile guidance code
+extending emacs. But you wouldn't want to write missile guidance code
 in elisp.
 
 This transcendent experience is the bait in the OCD trap.
