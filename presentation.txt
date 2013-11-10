@@ -29,9 +29,9 @@ Two major variants exist::
 Windows installers, Mac OSX packages, all linux platforms, android,
 etc.
 
-* What is emacs?
+(Speaking of...has everyone installed emacs?)* What is emacs?
 
-** The text editor...OF THE GODS!
+** Emacs is: The text editor...OF THE GODS!
 
 Just kidding. Gods are obviously upper management and use PowerPoint.
 
@@ -40,7 +40,7 @@ an experienced user.
 
 At the same time, it's at least slightly more approachable than vi for beginners.
 
-** An operating system
+** Emacs is: An operating system
 
 Emacs is very portable, and it provides a *lot* of features you might
 expect from an OS::
@@ -53,7 +53,7 @@ expect from an OS::
 
 "The Emacs operating system needs a better editor."  -- someone on the internet
 
-** A lisp interpreter with a great DSL
+** Emacs is: A lisp interpreter with a great DSL
 
 This is how I've come to view emacs.
 
@@ -161,8 +161,45 @@ in elisp.
 This transcendent experience is the bait in the OCD trap.
 
 * Things I wish I had known at the start
+
+Concepts and helpful functions that would have eased my education in
+emacs lisp.
+
 ** buffers
+
+A buffer contains "text to be edited."
+
+ - Text from files you've visited
+ - Text for all sorts of non-file things
+ - Read only toggling
+ - Programmatic modification
+ - Always a current buffer
+ - The "scratch" buffer
+ - *point*: location of cursor in a buffer
+
+In a very real way buffers are the center of emacs. Almost all
+processing involves reading and writing buffers.
+
+http://www.gnu.org/software/emacs/manual/html_node/elisp/Buffers.html#Buffers
+
+*** Buffer API examples
+
+ - current-buffer
+ - pop-to-buffer
+ - revert-buffer
+ - toggle-read-only
+ - with-temp-buffer (see prosjekt.el)
 ** modes
+
+"A mode is a set of definitions that customize Emacs and can be turned
+on and off while you edit."
+
+ - Programming languages
+ - Compilation output
+ - 
+
+http://www.gnu.org/software/emacs/manual/html_node/elisp/Modes.html
+
 ** edebug
 ** apropos
 ** describe-function
