@@ -217,10 +217,50 @@ To "uninstrument" a function, you simply reevaluate it. (Coming up!)
 http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug
 
 ** apropos
+
+C-h a
+
+Basically, find all defined symbols that match some pattern.
+
+This can be *incredibly* useful for finding things if you vaguely
+remember some part of a name.
+
 ** describe-function
+
+C-h f
+
+Get the description of a function, including signature information.
+
+Critically, this gives you the file where something is defined. This
+is great if you're trying to see how something works.
+
+E.g. when I wanted to write qdb interaction.
+
 ** describe-variable
-** eval-buffer
+
+C-h v
+
+Like describe function, but for variables.
+
+** eval-current-buffer
+
+(No default binding that I know of.)
+
+Evaluate an entire buffer of elisp code. 
+
+Sometimes just a lazy version of evaluating a single function.
+
+Often good if you've changed a lot of stuff in a file.
+
 ** eval-last-sexp
+
+C-x e
+
+Position cursor after closing paren of an sexp.
+
+This will evaluate that sexp.
+
+Very useful for elisp development.
 
 * A guided tour of real elisp
 
