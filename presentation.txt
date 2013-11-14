@@ -162,7 +162,7 @@ This transcendent experience is the bait in the OCD trap.
 
 * Things I wish I had known at the start
 
-Concepts and helpful functions that would have eased my education in
+Concepts and helpful functions that (would) have eased my education in
 emacs lisp.
 
 ** buffers
@@ -189,6 +189,7 @@ http://www.gnu.org/software/emacs/manual/html_node/elisp/Buffers.html#Buffers
  - revert-buffer
  - toggle-read-only
  - with-temp-buffer (see prosjekt.el)
+
 ** modes
 
 "A mode is a set of definitions that customize Emacs and can be turned
@@ -196,11 +197,25 @@ on and off while you edit."
 
  - Programming languages
  - Compilation output
- - 
+ - Markup
+ - Artist mode
+ - Dired mode
 
 http://www.gnu.org/software/emacs/manual/html_node/elisp/Modes.html
 
 ** edebug
+
+Debugger for emacs list.
+
+Basic usage: instrument a function with ``edebug-defun``. Then next
+time that function is hit the debugger will break. 
+
+Stepping, examining values, etc.
+
+To "uninstrument" a function, you simply reevaluate it. (Coming up!)
+
+http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug
+
 ** apropos
 ** describe-function
 ** describe-variable
