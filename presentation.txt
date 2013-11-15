@@ -203,19 +203,6 @@ on and off while you edit."
 
 http://www.gnu.org/software/emacs/manual/html_node/elisp/Modes.html
 
-** edebug
-
-Debugger for emacs list.
-
-Basic usage: instrument a function with ``edebug-defun``. Then next
-time that function is hit the debugger will break. 
-
-Stepping, examining values, etc.
-
-To "uninstrument" a function, you simply reevaluate it. (Coming up!)
-
-http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug
-
 ** apropos
 
 C-h a
@@ -241,6 +228,19 @@ E.g. when I wanted to write qdb interaction.
 C-h v
 
 Like describe function, but for variables.
+
+** edebug
+
+Debugger for emacs list.
+
+Basic usage: instrument a function with ``edebug-defun``. Then next
+time that function is hit the debugger will break. 
+
+Stepping, examining values, etc.
+
+To "uninstrument" a function, you simply reevaluate it. (Coming up!)
+
+http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug
 
 ** eval-current-buffer
 
