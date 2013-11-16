@@ -2,11 +2,18 @@
 
                   A rough introduction to Emacs Lisp
 
+                                - or -
+
+                   An exercise in metahomoiconicity
+
+--------------------------------------------------------------------------------
                             Austin Bingham
                             Sixty North AS
 
                        twitter: @austin_bingham
                     email: austin@sixty-north.com
+
+--------------------------------------------------------------------------------
 
                         ; First example!
                         (progn
