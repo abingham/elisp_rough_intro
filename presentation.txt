@@ -8,6 +8,12 @@
                        twitter: @austin_bingham
                     email: austin@sixty-north.com
 
+                        ; First example!
+                        (progn
+                         (iimage-mode)
+                         (outline-presentation-mode)
+                         (outline-presentation-first))
+
 ________________________________________________________________________________
 
 * A brief history of emacs
@@ -15,6 +21,8 @@ ________________________________________________________________________________
 ** All of the good things were invented in the 70's
 
 Guy Steele and Richard Stallman, MIT, 1976 
+
+<images/steele.jpg> <images/stallman.jpg>
 
 TECO editor => Editor MACroS
                E      MAC  S
@@ -29,7 +37,11 @@ Two major variants exist::
 Windows installers, Mac OSX packages, all linux platforms, android,
 etc.
 
-(Speaking of...has everyone installed emacs?)* What is emacs?
+(Speaking of...has everyone installed emacs?)
+
+* What is emacs?
+
+Emacs is many things to many people.
 
 ** Emacs is: The text editor...OF THE GODS!
 
@@ -39,6 +51,8 @@ But emacs is awesomely powerful for pure text editing in the hands of
 an experienced user.
 
 At the same time, it's at least slightly more approachable than vi for beginners.
+
+<images/god3.jpg>
 
 ** Emacs is: An operating system
 
@@ -66,10 +80,12 @@ It is a lisp development environment with::
 Emacs is not an extensible text-editor. It's a programming environment
 with a nice built-in library for editing text.
 
-** A massive OCD trap
+** Emacs is: A massive OCD trap
 
 Properly applied, a combination of emacs, git, and dwarf fortress can
 actually put certain people's brains into a sort of fractal shutdown spiral.
+
+<images/dwarf_fortress.jpg>
 
 * What is emacs lisp?
 
@@ -158,12 +174,40 @@ The weaknesses of the language become its strengths when you're
 extending emacs. But you wouldn't want to write missile guidance code
 in elisp.
 
+<images/strange_loop.jpg>
+
 This transcendent experience is the bait in the OCD trap.
 
 * Things I wish I had known at the start
 
 Concepts and helpful functions that (would) have eased my education in
 emacs lisp.
+
+** Basic Survival Skill 1: apropos
+
+C-h a
+
+Basically, find all defined symbols that match some pattern.
+
+This can be *incredibly* useful for finding things if you vaguely
+remember some part of a name.
+
+** Basic Survival Skill 2: describe-function
+
+C-h f
+
+Get the description of a function, including signature information.
+
+Critically, this gives you the file where something is defined. This
+is great if you're trying to see how something works.
+
+E.g. when I wanted to write qdb interaction.
+
+** Basic Survival Skill 3: describe-variable
+
+C-h v
+
+Like describe function, but for variables.
 
 ** buffers
 
@@ -203,45 +247,6 @@ on and off while you edit."
 
 http://www.gnu.org/software/emacs/manual/html_node/elisp/Modes.html
 
-** apropos
-
-C-h a
-
-Basically, find all defined symbols that match some pattern.
-
-This can be *incredibly* useful for finding things if you vaguely
-remember some part of a name.
-
-** describe-function
-
-C-h f
-
-Get the description of a function, including signature information.
-
-Critically, this gives you the file where something is defined. This
-is great if you're trying to see how something works.
-
-E.g. when I wanted to write qdb interaction.
-
-** describe-variable
-
-C-h v
-
-Like describe function, but for variables.
-
-** edebug
-
-Debugger for emacs list.
-
-Basic usage: instrument a function with ``edebug-defun``. Then next
-time that function is hit the debugger will break. 
-
-Stepping, examining values, etc.
-
-To "uninstrument" a function, you simply reevaluate it. (Coming up!)
-
-http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug
-
 ** eval-current-buffer
 
 (No default binding that I know of.)
@@ -261,6 +266,19 @@ Position cursor after closing paren of an sexp.
 This will evaluate that sexp.
 
 Very useful for elisp development.
+
+** edebug
+
+Debugger for emacs list.
+
+Basic usage: instrument a function with ``edebug-defun``. Then next
+time that function is hit the debugger will break. 
+
+Stepping, examining values, etc.
+
+To "uninstrument" a function, you simply reevaluate it.
+
+http://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug
 
 * A guided tour of real elisp
 
@@ -303,7 +321,7 @@ it.
 
 https://github.com/abingham/traad
 
-* A small project: bookmarks
+* A small project: waypoints
 
 Let's implement a small project. 
 
@@ -318,4 +336,15 @@ already.
 
 But this is simple to implement and realistic enough to be useful.
 
-** TODO: The rest of the project...
+--- The file is in wpt/wpt.el ---
+
+* That's all folks!
+
+Questions? Answers? 
+
+----------------------
+
+@austin_bingham
+austin@sixty-north.com
+
+<images/sixty_north.png>
